@@ -8,7 +8,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: #f1f5f3; /* мягкий серо-зелёный фон */
+    background-color: #f1f5f3; 
     color: #374151;
 }
 
@@ -54,11 +54,11 @@ body {
     border-radius: 14px;
     padding: 16px;
     box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
-    border: 1px solid #d6e2db; /* нежный серо-зелёный бордер */
+    border: 1px solid #d6e2db; 
 }
 
 .card--main {
-    border-color: #9fc2ae; /* акцент для основного блока */
+    border-color: #9fc2ae; 
     box-shadow: 0 12px 26px rgba(77, 124, 94, 0.18);
 }
 
