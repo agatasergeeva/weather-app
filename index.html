@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Прогноз погоды</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+    <header class="app-header">
+        <div class="section-card-title">
+            <h2>Прогноз погоды</h2>
+        </div>
+
+    </header>
+
+    <main class="app-main">
+        <section class="card card--main">
+            <div class="card-header">
+                <h2 id="main-location-title">Текущее местоположение</h2>
+                <button id="refresh-button" class="btn btn--primary">Обновить</button>
+            </div>
+            <div id="main-status" class="status"></div>
+            <div id="main-forecast" class="forecast-grid"></div>
+        </section>
+
+        <section class="card">
+            <h2>Другие города</h2>
+
+            <form id="add-city-form" class="city-form" autocomplete="off">
+                <label for="city-input" class="city-form__label">
+                    Добавить город
+                </label>
+                <div class="input-with-suggestions">
+                    <input
+                        type="text"
+                        id="city-input"
+                        class="city-form__input"
+                        placeholder="Начните вводить название города"
+                    >
+                    <ul id="city-suggestions" class="suggestions suggestions--hidden"></ul>
+                </div>
+                <div id="city-error" class="field-error"></div>
+                <button type="submit" class="btn btn--secondary">Добавить</button>
+            </form>
+
+            <p class="hint">
+                Вы можете посмотреть прогноз в других городах.
+            </p>
+
+            <div id="extra-cities" class="cities-grid"></div>
+        </section>
+    </main>
+</div>
+
+<!-- Модальное окно, если геолокация недоступна или запрещена -->
+<div id="modal-overlay" class="modal-overlay modal-overlay--hidden">
+    <div class="modal">
+        <h2 class="modal__title">Выберите город</h2>
+        <p class="modal__text">
+            Доступ к геолокации отклонён или недоступен.
+            Выберите город, для которого нужно показать прогноз.
+        </p>
+
+        <form id="modal-city-form" class="city-form" autocomplete="off">
+            <label for="modal-city-input" class="city-form__label">
+                Основной город
+            </label>
+            <div class="input-with-suggestions">
+                <input
+                    type="text"
+                    id="modal-city-input"
+                    class="city-form__input"
+                    placeholder="Начните вводить название города"
+                >
+                <ul id="modal-city-suggestions" class="suggestions suggestions--hidden"></ul>
+            </div>
+            <div id="modal-city-error" class="field-error"></div>
+            <button type="submit" class="btn btn--primary">Сохранить</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
