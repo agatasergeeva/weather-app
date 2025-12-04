@@ -83,7 +83,6 @@ function createForecastDay(dateStr, tMin, tMax, code, isToday = false) {
 }
 
 
-
 function buildWeatherUrl(lat, lon) {
     const params = new URLSearchParams({
         latitude: String(lat),
@@ -222,7 +221,6 @@ function setupAutocomplete(inputEl, suggestionsEl, errorEl, onCitySelected) {
             renderSuggestions(results);
         } catch (e) {
             console.warn('Ошибка поиска города:', e);
-            // Не показываем ошибку в UI, просто не подскажем
         }
     }
 
